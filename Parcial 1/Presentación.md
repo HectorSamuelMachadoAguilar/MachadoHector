@@ -8,7 +8,7 @@
 |Secundaria|Secundaria General Número 9 Siempre Con La Patria|Informática
 |Preparatoria|Colegio Nacional de Educación Profesional Técnica. "Conalep" 246|Informática
 |Universidad|Instituto Tecnológico de Nuevo Laredo "ITNL"|Ingeniería en Sistemas Computacionales|
-|
+
 
 ## **Experiencia laboral**  
 *De momento no cuento con experiencia laboral alguna*
