@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    width: 250px;
+    height: 525px;
+}
+
+ul > li > ul {
+    display: none;
+}
+
+ul > li:hover > ul {
+    display: block;
+    height: 100%;
+}
+
+ul > li:hover > ul > li:hover {
+    background-color: yellow;
+}
+
+.opcion {
+    background: Red;
+    color: black;
+}
+
+.subOpcion {
+    padding-left: 20px;
+    background: lightblue;
+    color: indigo;
+}

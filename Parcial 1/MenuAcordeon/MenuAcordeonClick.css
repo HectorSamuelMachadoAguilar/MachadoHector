@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    width: 200px;
+    height: 500px;
+}
+
+ul > li > ul {
+    display: none;
+}
+
+ul > li:target > ul {
+    display: block;
+    height: 100%;
+}
+
+ul > li:target > ul > li:hover{
+   background-color: green;
+}
+
+.opcion {
+    background: purple;
+    color: white;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+.subOpcion {
+    padding-left: 20px;
+    background: lightcoral;
+    color: lightskyblue;
+}
