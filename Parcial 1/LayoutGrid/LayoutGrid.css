@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    grid-template-rows: 10% 40% 40% 10%;
+    grid-template-areas: "enca enca enca" 
+                         "col1 col2 menulat"
+                         "col3 col4 menulat"
+                         "pie pie pie";
+    justify-content: stretch;
+    justify-items: stretch;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+.caja {
+    background-color: aqua;
+    /*height: 100px;
+    width: 100px;*/
+    border: 1px solid red;
+    text-align: center;
+}
+
+#enca {
+    grid-area: enca;
+}
+
+#menulat {
+    grid-area: menulat;
+}
+
+#col1 {
+    grid-area: col1;
+}
+
+#col2 {
+    grid-area: col2;
+}
+
+#col3 {
+    grid-area: col3;
+}
+
+#col4 {
+    grid-area: col4;
+}
+
+#pie {
+    grid-area: pie;
+}
+/*#caja1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+#caja5{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    /*grid-row-start: 3;
+    grid-row-end: 4;
+}*/

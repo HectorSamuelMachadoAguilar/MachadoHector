@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    justify-content: center;
+    justify-items: stretch;
+    align-content: center;
+    align-items: stretch;
+    grid-auto-flow: column;
+}
+
+.caja {
+    background-color: aqua;
+    /*height: 100px;
+    width: 100px;*/
+    border: 1px solid red;
+    text-align: center;
+}
+
+#caja1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
