@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    width: 100vw;
+    height: 100vh;
+}
+
+div.sidebar {
+    float: left;
+    background-color: lightgray;
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+}
+
+a:hover {
+    background-color: blue;
+    color: white;
+}
+
+div.content {
+    float: left;
+    width: calc(100% - 200px);
+    background-color: cadetblue;
+    padding: 1px 16px;
+    height: 100%;
+}
+
+.contenidoOpcion {
+    display: none;
+}
+
+@media screen and (max-width: 1200px){
+    div.sidebar {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .sidebar a{
+        float: none;
+        text-align: center;
+    }
+}
+
+.sidebar {
+    background-color: lightblue;
+    width: 200px;
+    position: absolute;
+}
+
+.content {
+    background-color: lightcoral;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+input[type=checkbox] {
+   display: none;
+}
+
+input:checked ~ .content { 
+    left: 0;
+}
+
+input:checked ~ label {
+    left: 0;
+}
+
+label {
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    font-size: large;
+    background-color: rosybrown;
+}
