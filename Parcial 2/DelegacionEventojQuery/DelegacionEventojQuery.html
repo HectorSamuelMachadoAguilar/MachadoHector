@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DelegacionEventojQuery.css">
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>Delegacion evento</title>
+</head>
+<body>
+    <div id="content" class="contenedor">
+        <div id="enca" class="caja">
+            <button id="boton">Cambiar color</button>
+        </div>
+        <div id="menulat" class="caja">Menu lateral</div>
+        <div id="col1" class="caja">Columna 1</div>
+        <div id="col2" class="caja">Columna 2</div>
+        <div id="col3" class="caja">Columna 3</div>
+        <div id="col4" class="caja">Columna 4</div>
+        <div id="pie" class="caja">Pie</div>
+    </div>
+    <script>
+        //const c = document.getElementById('cont');
+        //c.addEventListener('click', function onClick() {
+        //c.style.backgroundColor = 'black';
+        //c.style.color = 'red';
+        //document.body.style.backgroundColor = "lightblue";});
+
+        window.onload=function(){
+            const elem=document.querySelector(".contenedor");
+            elem.addEventListener("click",(e)=> {
+            e.target.classList.toggle("cajaAzul")
+            })
+        }
+
+        $(document).ready(function(){
+            $("#content").click(function(){console.log("Evento Delegación")})
+        })
+    </script>
+</body>
+</html>
