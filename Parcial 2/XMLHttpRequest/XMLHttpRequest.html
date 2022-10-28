@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="XMLHttpRequest.css">
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <div id="cont" class="contenedor">
+        <div id="enca" class="caja">
+            <button id="boton">Solicitud</button>
+        </div>
+        <div id="menulat" class="caja">Menu lateral</div>
+        <div id="col1" class="caja">Columna 1</div>
+        <div id="col2" class="caja">Columna 2</div>
+        <div id="col3" class="caja">Columna 3</div>
+        <div id="col4" class="caja">Columna 4</div>
+        <div id="pie" class="caja">Pie</div>
+    </div>
+    <script>
+        window.onload = function(){
+            document.getElementById("boton").addEventListener("click",CambiarColor);
+
+            function CambiarColor(){
+                var Request = new XMLHttpRequest();
+
+                Request.onreadystatechange = function(){
+                    if(Request.readyState == 4 && Request.status == 200){
+                        document.getElementById("cont").innerHTML = Request.responseText;
+                    }
+                };
+
+                Request.open("GET", "Exito.txt",true);
+                Request.send();
+            }
+        }
+    </script>
+</body>
+</html>
