@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AsyncAwait.css">
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>Async Await</title>
+</head>
+<body>  
+    <button id="btnAsyncAwait">Peticion AsyncAwait</button>
+    <div id="caja"></div>
+    <script>
+        document.getElementById("btnAsyncAwait").addEventListener("click",async function(){
+            let response = await fetch("https://api.chucknorris.io/jokes/pA3Q6z9_SIqJQQ7z43z2UQ")
+            let datoJson = await response.json();
+            document.getElementById("caja").innerText= datoJson.value;
+            console.log("Datos del Async")
+            console.log(datosJson.value)
+        })
+    </script>
+</body>
+</html>
