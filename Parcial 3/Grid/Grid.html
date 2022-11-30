@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsGrid</title>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
+    <script type="text/javascript" src="jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+</head>
+<body>
+    <div id="jsGrid"></div>
+    <script>
+
+        var comprador = [];
+        consulta();
+         async function consulta(){
+            let response = await fetch("Sql.php")
+           let datoJson = await response.json();;
+           comprador = datoJson;
+           console.log(datoJson);
+
+           $("#jsGrid").jsGrid({
+            width: "100%",
+            height: "400px",
+     
+            inserting: true,
+            editing: true,
+            sorting: true,
+            paging: true,
+     
+            data: comprador,
+            
+            fields: [
+                { name: "ID", type: "number", width: 10, validate: "required" },
+                { name: "Nombre", type: "text", width: 200 },
+                { name: "Telefono", type: "text", width: 100 },
+                { name: "Correo", type: "text", width: 200 },
+                { name: "Direccion", type: "text", width:200},
+                { name: "Nacimiento", type: "date", width: 100 },
+                { name: "Usuario", type: "text", width: 200 },
+                { name: "Contrasena", type: "text", width: 200 },
+                { type: "control" }
+            ]
+        });
+     }
+    </script>
+</body>
+</html>
