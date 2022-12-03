@@ -10,11 +10,11 @@
 
         $fechahoy = date('Y/m/d H:i:s');
         $siguienteSemana = time() + (7 * 24 * 60 * 60);
-        $fechaExpira = date('Y/m/d H:i:s',$siguienteSemana).'<br>';
+        $fechaExpira = date('Y/m/d H:i:s',$siguienteSemana)."<br>";
 
-        echo '<br>Fecha de Creación de Cookie: <br>'.$fechahoy.'<br>';
-        echo '<br>Fecha de Vencimiento de Cookie: <br>'.$fechaExpira.'<br>';
+        echo '<b>Fecha de Creación de Cookie: <b>'.$fechahoy.'<br>';
+        echo '<b>Fecha de Vencimiento de Cookie: <b>'.$fechaExpira.'<br>';
 
-        setcookie("ultimavisita".$fechahoy,time() + (7 * 24 * 60 * 60));
+        setcookie("ultimavisita",$fechahoy,time() + (7 * 24 * 60 * 60));
     }
     ?>

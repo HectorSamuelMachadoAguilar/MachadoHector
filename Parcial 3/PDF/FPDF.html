@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPDF</title>
+</head>
+<body>
+    <form id="Formula">
+            <label id="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text">
+            <input id="btn" type="button" value="crear PDF">
+    </form>
+    <script>
+        document.getElementById("btn").addEventListener("click", async function(){
+            Let headerList = { "Accept": ""/"", }
+            Let formNombre = document.getElementById('Formula')
+            Let cuerpo = new FormData(formNombre);
+
+            Let response = await fetch("http://localhost/MachadoHector/Parcial_3/PDF/crearpdf.php", {
+                method: "GET",
+                body: cuerpo,
+                headers: headerList
+            });
+
+            Let data = await response.blob();
+
+            Let archivoURL = URL.createObjectURL(data);
+            window.open(archivoURL);
+
+        })
+    </script>
+</body>
+</html>
