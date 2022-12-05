@@ -8,28 +8,29 @@
 </head>
 <body>
     <form id="Formula">
-            <label id="nombre">Nombre</label>
+            <label id="nombre">Nombre:</label>
             <input id="nombre" name="nombre" type="text">
-            <input id="btn" type="button" value="crear PDF">
+            <button id="btn" type="button">crear PDF</button>
     </form>
     <script>
-        document.getElementById("btn").addEventListener("click", async function(){
-            Let headerList = { "Accept": ""/"", }
-            Let formNombre = document.getElementById('Formula')
-            Let cuerpo = new FormData(formNombre);
+        const btn = document.querySelector("#btn");
+        
+        btn.addEventListener("click", async ()=>{
+            let headerList = { "Accept": "*/*" }
+            let formNombre = document.getElementById('Formula')
+            let cuerpo = new FormData(formNombre);
 
-            Let response = await fetch("http://localhost/MachadoHector/Parcial_3/PDF/crearpdf.php", {
-                method: "GET",
+            let response = await fetch("http://localhost/machadohector/Parcial%203/PDF/crearpdf.php", {
+                method: "POST",
                 body: cuerpo,
                 headers: headerList
             });
 
-            Let data = await response.blob();
-
-            Let archivoURL = URL.createObjectURL(data);
+            let data = await response.blob();
+            console.log(data);
+            let archivoURL = URL.createObjectURL(data);
             window.open(archivoURL);
-
-        })
+        });
     </script>
 </body>
 </html>
